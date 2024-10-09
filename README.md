@@ -1,4 +1,3 @@
 # IMR24-25
-
-Hutan Stefan
-Bolotă Teofil
+# Hutan Stefan
+# Bolotă Teofil
