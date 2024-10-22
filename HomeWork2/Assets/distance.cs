@@ -2,24 +2,23 @@ using UnityEngine;
 
 public class DistanceCalculator : MonoBehaviour
 {
-    public GameObject targetObject; // Obiectul de referință (ex: gaura de golf)
-    private Rigidbody rb; // Rigidbody-ul bilei
-    private Vector3 initialPosition; // Poziția inițială a bilei
+    public GameObject targetObject; 
+    private Rigidbody rb; 
+    private Vector3 initialPosition; 
     private bool hasStopped = false; 
-    int hits=3; //trebuie pus cu una in plus fata de ce vrem noi
+    int hits=3;
 
     void Start()
     {
-        // Stocăm poziția inițială a bilei la început
+
         initialPosition = transform.position;
 
-        // Obținem componenta Rigidbody atașată bilei
         rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        if (rb.velocity.magnitude < 0.01f && !hasStopped)
+        if (rb.velocity.magnitude < 0.05f && !hasStopped)
         {
             hasStopped = true; 
 
@@ -44,7 +43,7 @@ public class DistanceCalculator : MonoBehaviour
         }
 
 
-        if (rb.velocity.magnitude > 0.01f)
+        if (rb.velocity.magnitude > 0.05f)
         {
             hasStopped = false;
         }
